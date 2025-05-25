@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -14,21 +14,13 @@ import { SignInForm } from "@/components/auth/sign-in-form"
 import { UserDropdown } from "@/components/user-dropdown"
 import { AuthProvider, useAuth } from "./context/AuthContext"
 import { CreditDisplay } from "@/components/credit-display"
-import { useSearchParams } from "next/navigation"
+import { SearchParamsWrapper } from "@/components/search-params-wrapper"
 
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] })
 
 function ClientLayoutContent({ children }: { children: React.ReactNode }) {
   const [isSignInOpen, setIsSignInOpen] = useState(false)
   const { user, logout } = useAuth()
-  const searchParams = useSearchParams()
-
-  useEffect(() => {
-    // Check if signin=true is in the URL
-    if (searchParams.get("signin") === "true") {
-      setIsSignInOpen(true)
-    }
-  }, [searchParams])
 
   const handleSignIn = (email: string) => {
     // The actual sign-in is handled by the AuthContext
@@ -40,6 +32,8 @@ function ClientLayoutContent({ children }: { children: React.ReactNode }) {
     <html lang="en" className="dark">
       <body className={jetbrainsMono.className}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
+          <SearchParamsWrapper onSignInOpen={setIsSignInOpen} />
+
           {/* Navigation */}
           <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800">
             <div className="container mx-auto flex items-center justify-between py-4 px-4">

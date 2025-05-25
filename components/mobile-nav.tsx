@@ -10,6 +10,12 @@ export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false)
   const { user, logout } = useAuth()
 
+  const handleSignInClick = () => {
+    setIsOpen(false)
+    // Use window.location to navigate with search params
+    window.location.href = "/?signin=true"
+  }
+
   return (
     <div className="md:hidden">
       <Button variant="ghost" size="icon" onClick={() => setIsOpen(true)} className="text-gray-300">
@@ -87,11 +93,13 @@ export function MobileNav() {
                 PROFILE
               </Link>
             ) : (
-              <Link href="/?signin=true" onClick={() => setIsOpen(false)}>
-                <Button variant="outline" className="rounded-full border-gray-700 text-white hover:bg-gray-800 mt-4">
-                  SIGN IN
-                </Button>
-              </Link>
+              <Button
+                variant="outline"
+                className="rounded-full border-gray-700 text-white hover:bg-gray-800 mt-4"
+                onClick={handleSignInClick}
+              >
+                SIGN IN
+              </Button>
             )}
             {user && (
               <Button
