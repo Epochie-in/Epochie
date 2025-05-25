@@ -49,7 +49,7 @@ export default function ProfilePage() {
       }
 
       // Make API call to update profile
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api"}/auth/profile`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://epochie.duckdns.org:5000/api"}/auth/profile`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

@@ -68,7 +68,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     setError(null)
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api"}/auth/login`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://epochie.duckdns.org:5000/api"}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -104,7 +104,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     setError(null)
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api"}/auth/register`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://epochie.duckdns.org:5000/api"}/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -141,7 +141,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     setError(null)
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api"}/auth/google`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://epochie.duckdns.org:5000/api"}/auth/google`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -204,7 +204,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     }
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api"}/credits/use`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://epochie.duckdns.org:5000/api"}/credits/use`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -236,7 +236,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     if (user) {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api"}/auth/preferences`,
+          `${process.env.NEXT_PUBLIC_API_URL || "http://epochie.duckdns.org:5000/api"}/auth/preferences`,
           {
             method: "PUT",
             headers: {
@@ -276,7 +276,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     }
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api"}/auth/survey`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://epochie.duckdns.org:5000/api"}/auth/survey`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

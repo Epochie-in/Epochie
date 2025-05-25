@@ -28,7 +28,7 @@ export function ForgotPasswordForm({ isOpen, onClose, onBackToSignIn }: ForgotPa
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api"}/auth/forgot-password`,
+        `${process.env.NEXT_PUBLIC_API_URL || "http://epochie.duckdns.org:5000/api"}/auth/forgot-password`,
         {
           method: "POST",
           headers: {

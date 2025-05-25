@@ -42,7 +42,7 @@ export default function ResetPasswordPage() {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api"}/auth/reset-password/${token}`,
+        `${process.env.NEXT_PUBLIC_API_URL || "http://epochie.duckdns.org:5000/api"}/auth/reset-password/${token}`,
         {
           method: "POST",
           headers: {

@@ -33,7 +33,7 @@ export default function PricingPage() {
 
     try {
       // Create order
-      const response = await fetch("http://localhost:5000/api/credits/create-order",
+      const response = await fetch("http://epochie.duckdns.org:5000/api/credits/create-order",
         {
           method: "POST",
           headers: {
@@ -73,7 +73,7 @@ export default function PricingPage() {
         handler: async (response: any) => {
           try {
             const verifyResponse = await fetch(
-              `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api"}/credits/verify-payment`,
+              `${process.env.NEXT_PUBLIC_API_URL || "http://epochie.duckdns.org:5000/api"}/credits/verify-payment`,
               {
                 method: "POST",
                 headers: {

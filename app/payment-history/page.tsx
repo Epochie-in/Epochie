@@ -33,7 +33,7 @@ export default function PaymentHistoryPage() {
   const fetchPaymentHistory = async () => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api"}/credits/payment-history`,
+        `${process.env.NEXT_PUBLIC_API_URL || "http://epochie.duckdns.org:5000/api"}/credits/payment-history`,
         {
           headers: {
             Authorization: `Bearer ${user?.token}`,
